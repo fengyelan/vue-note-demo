@@ -1,20 +1,4 @@
-<script>
-
-    import store from '../vuex/store.js'
-    export default {
-       data(){
-       		
-          return {
-            show:'all'
-          }
-       },
-       methods:{
-        update_active_note(note){
-          store.dispatch('updateActiveNote',note);
-        }
-       }
-    }
-</script>    
+  
 <template>
     <div id="notes_list">
      <div class="list-header">
@@ -83,3 +67,18 @@
     }
 }
 </style>
+<script>
+    export default {
+       data(){
+            
+          return {
+            show:'all'
+          }
+       },
+       methods:{
+        update_active_note(note){
+          this.$store.dispatch('updateActiveNote',note);
+        }
+       }
+    }
+</script>  

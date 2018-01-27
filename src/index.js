@@ -6,9 +6,11 @@ import notelist from './components/NotesList'
 import toolbar from './components/Toolbar'
 
 new Vue({
-	el:'#app',
-	store, 
-  components:{
-    editor,notelist,toolbar
-  }
+    el: '#app',
+    store,
+    components: {
+        editor,
+        notelist,
+        toolbar
+    }
 })

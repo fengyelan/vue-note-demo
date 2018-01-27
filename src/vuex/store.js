@@ -4,8 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-	notes:[],
-	activeNote:{}
+	notes:[], //所有的笔记
+	activeNote:{} //当前笔记
 }
 
 const getters = {
@@ -38,7 +38,6 @@ const mutations = {
 		state.activeNote = state.notes[0]
 	},
 	TOGGLE_FAVORITE(state){
-
 		state.activeNote.favorite = !state.activeNote.favorite
 	},
 	SET_ACTIVE_NOTE(state,note){

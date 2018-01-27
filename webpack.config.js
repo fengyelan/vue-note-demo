@@ -35,8 +35,6 @@ function getLocalIps(flagIpv6) {
     }
     return ips;
 };
-// console.log(process.env.NODE_ENV);
-// console.log(process.env.Module);
 
 
 module.exports = {
@@ -181,13 +179,11 @@ module.exports = {
                 exclude: /node_modules/,
                 include:/src/,
                 use:{
-                    loader:'babel-loader?cacheDirectory',//cacheDirectory指定的目录将用来缓存 loader 的执行结果。之后的 webpack 构建，将会尝试读取缓存，来避免在每次执行时，可能产生的、高性能消耗的 Babel 重新编译过程,将 babel-loader 提速至少两倍。 这会将转译的结果缓存到文件系统中。
+                    //cacheDirectory指定的目录将用来缓存 loader 的执行结果。之后的 webpack 构建，将会尝试读取缓存，来避免在每次执行时，可能产生的、高性能消耗的 Babel 重新编译过程,将 babel-loader 提速至少两倍。 这会将转译的结果缓存到文件系统中。
+                    loader:'babel-loader?cacheDirectory',
                     options:{
-                        presets:['env'],
-        //                 "presets": [["es2015", { "modules": false, "loose": true}],
-        // ["stage-2"]],
-                          plugins:[["transform-object-rest-spread"]],
-        //                 //"comments": false
+                        presets:['env'],                
+                        plugins:[["transform-object-rest-spread"]]
                     }
                 }
                 

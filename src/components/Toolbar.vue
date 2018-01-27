@@ -1,26 +1,3 @@
-<script> 
-    //import store from '../vuex/store.js'
-    import {mapGetters,mapState} from 'vuex';
-    export default { 
-      computed:mapGetters(
-        {
-          activeNoteFavorite:state=>state.getters.activeNoteFavorite
-        }
-      ),  
-       methods:{
-        add_note(){
-          //store.dispatch('deleteNote'); 这样的话上面必须引入import store from '../vuex/store.js'
-          this.$store.dispatch('addNote');  
-        },
-        delete_note(){
-          this.$store.dispatch('deleteNote');
-        },
-        toggle_note(){
-          this.$store.dispatch('toggleNote');
-        }
-       }
-    }
-</script>    
 <template>
     <div id="tool_bar">
        <i class="glyphicon glyphicon-plus" @click="add_note"></i>
@@ -47,3 +24,24 @@
     }
 }
 </style>
+<script> 
+    import {mapGetters,mapState} from 'vuex';
+    export default { 
+      computed:mapGetters(
+        {
+          activeNoteFavorite:state=>state.getters.activeNoteFavorite
+        }
+      ),  
+       methods:{
+        add_note(){
+          this.$store.dispatch('addNote');  
+        },
+        delete_note(){
+          this.$store.dispatch('deleteNote');
+        },
+        toggle_note(){
+          this.$store.dispatch('toggleNote');
+        }
+       }
+    }
+</script> 
